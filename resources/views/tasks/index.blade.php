@@ -32,14 +32,11 @@
                             </span>
 
                             <strong>{{ $task->name }}</strong>
-                            <div>
-                                <!-- Edit Icon -->
+                            <div>                               
                                 <a href="#" class="text-primary mr-2" title="Edit" data-bs-toggle="modal" data-bs-target="#editTaskModal"
                                     onclick="editTask({{ $task }})">
                                     <i class="fas fa-edit"></i>
-                                </a>
-
-                                <!-- Delete Icon (with SweetAlert confirmation) -->
+                                </a>                               
                                 <a href="#" class="text-danger" title="Delete" onclick="confirmDelete({{ $task->id }})">
                                     <i class="fas fa-trash"></i>
                                 </a>
@@ -65,14 +62,11 @@
                                     width: 12px; height: 12px; border-radius: 50%;">
                             </span>
                             <strong>{{ $task->name }}</strong>
-                            <div>
-                                <!-- Edit Icon -->
+                            <div>                                
                                 <a href="#" class="text-primary mr-2" title="Edit" data-bs-toggle="modal" data-bs-target="#editTaskModal"
                                     onclick="editTask({{ $task }})">
                                     <i class="fas fa-edit"></i>
-                                </a>
-
-                                <!-- Delete Icon (with SweetAlert confirmation) -->
+                                </a>                                
                                 <a href="#" class="text-danger" title="Delete" onclick="confirmDelete({{ $task->id }})">
                                     <i class="fas fa-trash"></i>
                                 </a>
@@ -98,13 +92,11 @@
                                     width: 12px; height: 12px; border-radius: 50%;">
                             </span>
                             <strong>{{ $task->name }}</strong>
-                            <div>
-                                <!-- Edit Icon -->
+                            <div>                                
                                 <a href="#" class="text-primary mr-2" title="Edit" data-bs-toggle="modal" data-bs-target="#editTaskModal"
                                     onclick="editTask({{ $task }})">
                                     <i class="fas fa-edit"></i>
-                                </a>
-                                <!-- Delete Icon (with SweetAlert confirmation) -->
+                                </a>                                
                                 <a href="#" class="text-danger" title="Delete" onclick="confirmDelete({{ $task->id }})">
                                     <i class="fas fa-trash"></i>
                                 </a>
@@ -167,7 +159,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    // Initialize sortable lists for tasks (drag and drop)
+    // Initialize drag and drop
     const todoList = document.getElementById('todo-list');
     const inProgressList = document.getElementById('in-progress-list');
     const doneList = document.getElementById('done-list');
@@ -229,7 +221,6 @@
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Send a DELETE request
             const form = document.createElement('form');
             form.action = `/tasks/${taskId}`;
             form.method = 'POST';
